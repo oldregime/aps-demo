@@ -29,6 +29,7 @@ update_option( 'aps_settings', [
 	'company_name' => $d['company']['legalEntity'], 'tagline' => 'Protecting Crop • Creating Life',
 	'phone' => $c['phone'], 'whatsapp' => $c['whatsappNumber'], 'email' => $c['email'], 'address' => $c['address'],
 	'shop_url' => $d['company']['ecommerceUrl'],
+	'maps_embed' => 'https://www.google.com/maps?q=' . rawurlencode( $c['address'] ) . '&output=embed',
 ] );
 update_option( 'blogname', $d['company']['name'] );
 update_option( 'blogdescription', 'Protecting Crop • Creating Life' );
@@ -39,7 +40,7 @@ foreach ( array_values( $d['products'] ) as $i => $p ) {
 	$term = term_exists( $p['category'], 'aps_product_cat' ) ?: wp_insert_term( $p['category'], 'aps_product_cat' );
 	$tid = is_array( $term ) ? (int) $term['term_id'] : (int) $term;
 	$existing = get_page_by_path( $p['id'], OBJECT, 'aps_product' );
-	$body = "<!-- wp:paragraph --><p>" . esc_html( $p['tagline'] ) . "</p><!-- /wp:paragraph -->\n<!-- wp:heading {\"level\":3} --><h3>Key features</h3><!-- /wp:heading -->\n<!-- wp:list --><ul>";
+	$body = "<!-- wp:heading {\"level\":3} --><h3>Key features</h3><!-- /wp:heading -->\n<!-- wp:list --><ul>";
 	foreach ( $p['features'] as $f ) $body .= '<!-- wp:list-item --><li>' . esc_html( $f ) . '</li><!-- /wp:list-item -->';
 	$body .= "</ul><!-- /wp:list -->";
 	$specs = ''; foreach ( $p['specs'] as $k => $v ) $specs .= "$k | $v\n";
@@ -95,7 +96,9 @@ $hero_inner =
 	b_h( 1, 'A clearer signal for<br><em>healthier crops.</em>', '"textColor":"canvas"' ) .
 	b_p( 'Pest monitoring solutions that help growers act with greater confidence—and help nature work a little more in balance.', '"textColor":"canvas","fontSize":"lead"', 'has-canvas-color has-text-color has-lead-font-size' ) .
 	b_btns( b_btn( 'Explore our solutions', '#products' ) . b_btn( 'Partner with APS', '/dealer-onboarding/', true ) ) .
-	b_p( 'Made in India • Manufacturer &amp; exporter • Built around Integrated Pest Management (IPM) • Cherlapally, Hyderabad • ISO 9001:2015', '"textColor":"canvas","fontSize":"small"', 'has-canvas-color has-text-color has-small-font-size' );
+	'<!-- wp:group {"className":"aps-chips","layout":{"type":"flex","flexWrap":"wrap"}} --><div class="wp-block-group aps-chips">' .
+	implode( '', array_map( fn( $t ) => b_p( esc_html( $t ), '"className":"aps-chip"', 'aps-chip' ), [ 'Made in India', 'Manufacturer & exporter', 'Integrated Pest Management', 'ISO 9001:2015', 'Cherlapally, Hyderabad' ] ) ) .
+	'</div><!-- /wp:group -->';
 $bg_img = ( ! $hero_video && $poster_url ) ? "<img class=\"wp-block-cover__image-background\" alt=\"\" loading=\"eager\" fetchpriority=\"high\" src=\"" . esc_url( $poster_url ) . "\" data-object-fit=\"cover\"/>" : '';
 $hero = "<!-- wp:cover " . wp_json_encode( $cover_attrs, JSON_UNESCAPED_SLASHES ) . " -->\n<div class=\"wp-block-cover alignfull is-light has-custom-content-position is-position-center-left aps-hero\" style=\"min-height:86vh\"><span aria-hidden=\"true\" class=\"wp-block-cover__background has-forest-dark-background-color has-background-dim-60 has-background-dim\"></span>$bg_img$video_tag<div class=\"wp-block-cover__inner-container\">$hero_inner</div></div>\n<!-- /wp:cover -->\n";
 
@@ -104,9 +107,9 @@ $cards = [];
 foreach ( $d['metrics'] as $m ) {
 	$cards[] = b_group(
 		b_p( esc_html( strtoupper( $m['suffix'] === '+' ? 'Field impact' : $m['suffix'] ) ), '"className":"aps-eyebrow"', 'aps-eyebrow' ) .
-		b_p( esc_html( $m['value'] . ( $m['suffix'] === '+' ? '+' : '' ) ), '"fontFamily":"serif","fontSize":"title","textColor":"forest"', 'has-forest-color has-text-color has-serif-font-family has-title-font-size' ) .
+		b_p( esc_html( $m['value'] . ( $m['suffix'] === '+' ? '+' : '' ) ), '"fontFamily":"serif","fontSize":"display","textColor":"buttercup"', 'has-buttercup-color has-text-color has-serif-font-family has-display-font-size aps-metric__value' ) .
 		b_h( 4, esc_html( $m['label'] ) ) . b_p( esc_html( $m['subtext'] ), '"fontSize":"small"', 'has-small-font-size' ),
-		[ 'className' => 'aps-card', 'style' => [ 'spacing' => [ 'padding' => [ 'all' => '1.5rem' ] ] ] ], 'aps-card' );
+		[ 'className' => 'aps-metric' ], 'aps-metric' );
 }
 $stake = [
 	[ 'Growers — Commercial & progressive farmers', 'Save ₹4,500 – ₹8,000 / acre in chemical spray labour and pesticide costs', [ 'Eliminates 6–10 hazardous spray operations per harvest cycle', 'Protects spray operators and families from chemical exposure', 'Boosts Grade-A blemish-free fruit and boll turnout' ] ],
@@ -116,9 +119,10 @@ $stake = [
 $details = '';
 foreach ( $stake as $s ) $details .= "<!-- wp:details -->\n<details class=\"wp-block-details\"><summary>" . esc_html( $s[0] ) . "</summary>" . b_p( '<strong>' . esc_html( $s[1] ) . '</strong>' ) . b_list( $s[2] ) . "</details>\n<!-- /wp:details -->\n";
 $metrics = section(
-	b_eyebrow( 'MEASURABLE FIELD IMPACT' ) . b_h( 2, 'Ecological balance backed by <em>field arithmetic.</em>' ) .
-	b_cols( array_map( fn( $c ) => $c, $cards ) ) .
-	b_h( 3, 'How APS technology transforms agricultural economics' ) . $details, 'canvas', 'impact' );
+	b_eyebrow( 'MEASURABLE FIELD IMPACT' ) . b_h( 2, 'Ecological balance backed by <em>field arithmetic.</em>', '"textColor":"canvas"' ) .
+	b_cols( array_map( fn( $c ) => $c, $cards ), '"className":"aps-metrics"' ), 'forest-dark', 'impact' );
+$stakes = section(
+	b_eyebrow( 'WHO BENEFITS' ) . b_h( 2, 'How APS technology transforms <em>agricultural economics.</em>' ) . $details, 'canvas', 'benefits' );
 
 /* ---------- PRODUCTS ---------- */
 $loop = "<!-- wp:query {\"queryId\":11,\"query\":{\"perPage\":4,\"pages\":0,\"offset\":0,\"postType\":\"aps_product\",\"order\":\"asc\",\"orderBy\":\"menu_order\",\"inherit\":false},\"align\":\"wide\"} -->\n<div class=\"wp-block-query alignwide\"><!-- wp:post-template {\"layout\":{\"type\":\"grid\",\"columnCount\":4}} -->\n"
@@ -126,7 +130,7 @@ $loop = "<!-- wp:query {\"queryId\":11,\"query\":{\"perPage\":4,\"pages\":0,\"of
 	. "<!-- wp:post-featured-image {\"isLink\":true,\"aspectRatio\":\"4/3\",\"style\":{\"border\":{\"radius\":\"12px\"}}} /-->\n"
 	. "<!-- wp:post-title {\"level\":3,\"isLink\":true,\"fontSize\":\"subtitle\"} /-->\n"
 	. "<!-- wp:post-excerpt {\"excerptLength\":22,\"fontSize\":\"small\"} /-->\n"
-	. "<!-- wp:shortcode -->[aps_meta key=\"crops\"]<!-- /wp:shortcode -->\n"
+	. "<!-- wp:shortcode --><p class=\"aps-crops\">[aps_meta key=\"crops\"]</p><!-- /wp:shortcode -->\n"
 	. "<!-- wp:read-more {\"content\":\"View specifications\",\"className\":\"aps-readmore\"} /-->\n"
 	. "</div>\n<!-- /wp:group -->\n<!-- /wp:post-template --></div>\n<!-- /wp:query -->\n";
 $products = section( b_eyebrow( 'FLAGSHIP SOLUTIONS' ) . b_h( 2, 'Four systems. <em>One IPM philosophy.</em>' ) . $loop .
@@ -150,16 +154,17 @@ $explainer = section( b_eyebrow( 'HOW PHEROMONE TECHNOLOGY WORKS' ) . b_h( 2, 'F
 
 /* ---------- AGRI JNANAM + CALCULATOR ---------- */
 $kloop = "<!-- wp:query {\"queryId\":12,\"query\":{\"perPage\":3,\"pages\":0,\"offset\":0,\"postType\":\"aps_knowledge\",\"order\":\"desc\",\"orderBy\":\"date\",\"inherit\":false},\"align\":\"wide\"} -->\n<div class=\"wp-block-query alignwide\"><!-- wp:post-template {\"layout\":{\"type\":\"grid\",\"columnCount\":3}} -->\n"
-	. "<!-- wp:group {\"className\":\"aps-card\",\"style\":{\"spacing\":{\"padding\":{\"all\":\"1.25rem\"}}}} -->\n<div class=\"wp-block-group aps-card\"><!-- wp:post-title {\"level\":4,\"isLink\":true} /-->\n<!-- wp:post-excerpt {\"excerptLength\":28,\"fontSize\":\"small\"} /--></div>\n<!-- /wp:group -->\n<!-- /wp:post-template --></div>\n<!-- /wp:query -->\n";
+	. "<!-- wp:group {\"className\":\"aps-card\",\"style\":{\"spacing\":{\"padding\":{\"all\":\"1.25rem\"}}}} -->\n<div class=\"wp-block-group aps-card\"><!-- wp:paragraph {\"className\":\"aps-eyebrow\"} --><p class=\"aps-eyebrow\">FIELD GUIDE</p><!-- /wp:paragraph --><!-- wp:post-title {\"level\":4,\"isLink\":true,\"fontSize\":\"lead\"} /-->\n<!-- wp:post-excerpt {\"excerptLength\":28,\"fontSize\":\"small\"} /--><!-- wp:read-more {\"content\":\"Read the guide\",\"className\":\"aps-readmore\"} /--></div>\n<!-- /wp:group -->\n<!-- /wp:post-template --></div>\n<!-- /wp:query -->\n";
 $jnanam = section( b_eyebrow( 'APS AGRI JNANAM' ) . b_h( 2, 'Practical knowledge for <em>every farmer.</em>' ) . $kloop .
-	b_h( 3, 'Calculate how many traps you need' ) . "<!-- wp:shortcode -->[aps_trap_calculator]<!-- /wp:shortcode -->\n", 'canvas', 'agri-jnanam' );
+	b_group( b_eyebrow( 'TRAP CALCULATOR' ) . b_h( 3, 'Calculate how many traps you need' ) . "<!-- wp:shortcode -->[aps_trap_calculator]<!-- /wp:shortcode -->\n", [ 'className' => 'aps-calc-wrap', 'layout' => [ 'type' => 'default' ] ], 'aps-calc-wrap' ), 'canvas', 'agri-jnanam' );
 
 /* ---------- B2B CTA ---------- */
-$cta = section( b_eyebrow( 'INSTITUTIONAL PARTNERSHIPS' ) . b_h( 2, 'Distribute, private-label or export with <em>APS.</em>', '"textColor":"canvas"' ) .
-	b_p( 'Custom isomer synthesis, private-label packaging, phytosanitary export documentation, and air/sea container dispatch from our Cherlapally plant.', '"textColor":"canvas"', 'has-canvas-color has-text-color' ) .
-	b_btns( b_btn( 'Become a dealer', '/dealer-onboarding/' ) . b_btn( 'Contact the plant', '/contact/', true ) ), 'forest', 'partner' );
+$cta_inner = b_eyebrow( 'INSTITUTIONAL PARTNERSHIPS' ) . b_h( 2, 'Distribute, private-label or export with <em>APS.</em>', '"textColor":"canvas"' ) .
+	b_p( 'Custom isomer synthesis, private-label packaging, phytosanitary export documentation, and air/sea container dispatch from our Cherlapally plant.', '"textColor":"canvas","fontSize":"lead"', 'has-canvas-color has-text-color has-lead-font-size' ) .
+	b_btns( b_btn( 'Become a dealer', '/dealer-onboarding/' ) . b_btn( 'Contact the plant', '/contact/', true ) );
+$cta = section( b_group( $cta_inner, [ 'className' => 'aps-cta-panel', 'backgroundColor' => 'forest', 'layout' => [ 'type' => 'default' ] ], 'aps-cta-panel has-forest-background-color has-background' ), 'canvas', 'partner', '40' );
 
-$content = $hero . $metrics . $products . $pillars . $explainer . $jnanam . $cta;
+$content = $hero . $metrics . $stakes . $products . $pillars . $explainer . $jnanam . $cta;
 $home = get_page_by_path( 'home' );
 wp_update_post( [ 'ID' => $home->ID, 'post_content' => $content ] );
 if ( function_exists( 'pll_set_post_language' ) ) pll_set_post_language( $home->ID, 'en' );
