@@ -48,7 +48,7 @@
       "step": "installPlugin",
       "pluginData": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/aps-core-plugin.zip"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/aps-core-plugin.zip"
       },
       "options": {
         "activate": true
@@ -58,7 +58,7 @@
       "step": "installTheme",
       "themeData": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/aps-corporate-theme.zip"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/aps-corporate-theme.zip"
       },
       "options": {
         "activate": true
@@ -73,7 +73,7 @@
       "path": "/wordpress/wp-content/aps-seed/lib-blocks.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/lib-blocks.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/lib-blocks.php"
       }
     },
     {
@@ -81,7 +81,7 @@
       "path": "/wordpress/wp-content/aps-seed/seed-data.json",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-data.json"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/seed-data.json"
       }
     },
     {
@@ -89,7 +89,7 @@
       "path": "/wordpress/wp-content/aps-seed/seed-home.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-home.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/seed-home.php"
       }
     },
     {
@@ -97,7 +97,7 @@
       "path": "/wordpress/wp-content/aps-seed/seed-forms.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-forms.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/seed-forms.php"
       }
     },
     {
@@ -105,7 +105,7 @@
       "path": "/wordpress/wp-content/aps-seed/seed-pages.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-pages.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/seed-pages.php"
       }
     },
     {
@@ -113,7 +113,7 @@
       "path": "/wordpress/wp-content/aps-seed/aps-logo.png",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/aps-logo.png"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/aps-logo.png"
       }
     },
     {
@@ -121,7 +121,7 @@
       "path": "/wordpress/wp-content/aps-seed/provision-pages.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/provision-pages.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/provision-pages.php"
       }
     },
     {
@@ -129,7 +129,7 @@
       "path": "/wordpress/wp-content/aps-seed/provision.php",
       "data": {
         "resource": "url",
-        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/provision.php"
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/a8366a3f45060530cfce35af9822c6c61ccaa80b/scripts/provision.php"
       }
     },
     {
