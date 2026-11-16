@@ -1,0 +1,355 @@
+{
+ "products": [
+  {
+   "id": "fruit-fly-trap",
+   "name": "APS Easy & Maxfill Fruit Fly Trap & Lure",
+   "scientificName": "Bactrocera dorsalis / Bactrocera zonata",
+   "category": "Horticulture & Orchard Protection",
+   "tagline": "Unmatched fruit fly interception for high-value mango, guava, citrus & papaya plantations.",
+   "image": "https://static.wixstatic.com/media/1d2854_7a88f5fb5bb3459facc09f534f0dfc8a~mv2.jpeg",
+   "badge": "Bestseller",
+   "targetPest": "Oriental Fruit Fly & Peach Fruit Fly (Bactrocera spp.)",
+   "targetCrops": [
+    "Mango",
+    "Guava",
+    "Papaya",
+    "Citrus",
+    "Custard Apple",
+    "Gourds"
+   ],
+   "lureLongevity": "60 to 75 Days Active Field Life",
+   "trapsPerAcre": "6 to 8 Traps / Acre for monitoring, 12 to 15 Traps / Acre for mass trapping",
+   "storeUrl": "https://www.agripherosolutionz.com/product-page/easy-fruit-fly-trap",
+   "features": [
+    "Heavy-duty UV-stabilized polymer trap body engineered for Indian field conditions",
+    "Patented 360-degree aerodynamic insect entry slits that prevent pest escape",
+    "High-potency Methyl Eugenol lure block providing continuous olfactory emission",
+    "Zero insecticide spray residue on ripening fruit skins"
+   ],
+   "specs": {
+    "Material": "Virgin High-Density Polypropylene (UV Stabilized)",
+    "Lure Active Ingredient": "Methyl Eugenol Matrix blend (>98% pure)",
+    "Dispenser Form": "Specially formulated wood/polymer porous capillary block",
+    "Color": "High-visibility attractant yellow and translucent collection chamber",
+    "Longevity": "Up to 75 days under field conditions"
+   }
+  },
+  {
+   "id": "pink-bollworm-trapper",
+   "name": "APS Pink Bollworm (PBW) Pheromone Lure & Trap",
+   "scientificName": "Pectinophora gossypiella",
+   "category": "Fiber & Cash Crops",
+   "tagline": "The premier biological defense against resistant Pink Bollworm in cotton.",
+   "image": "https://static.wixstatic.com/media/1d2854_b5e240a37a724f38a6124fdbb9b63765~mv2.jpeg",
+   "badge": "Cotton Defense",
+   "targetPest": "Pink Bollworm (Pectinophora gossypiella)",
+   "targetCrops": [
+    "Cotton (Bt and Non-Bt)",
+    "Okra",
+    "Hibiscus"
+   ],
+   "lureLongevity": "45 to 60 Days Continuous Release",
+   "trapsPerAcre": "5 to 8 Traps / Acre for monitoring, 12 to 16 Traps / Acre for mass trapping",
+   "storeUrl": "https://www.agripherosolutionz.com/product-page/pink-bollworm",
+   "features": [
+    "Isomerically pure Gossyplure formula mimicking female moth calling scent",
+    "Overcomes insect resistance developed against Bt toxins and chemical pyrethroids",
+    "Engineered for high moth catch density in humid and windy cotton canopies",
+    "Saves up to 6–8 expensive pesticide sprays per cotton season"
+   ],
+   "specs": {
+    "Material": "Impact-resistant engineering plastics",
+    "Lure Active Ingredient": "(Z,Z)- & (Z,E)-7,11-Hexadecadienyl acetate (Gossyplure)",
+    "Dispenser Form": "Optimum-diffusion rubber septa / micro-tube capillary",
+    "Color": "UV-shielded green canopy with translucent moth capture sleeve",
+    "Longevity": "60 days linear field emission"
+   }
+  },
+  {
+   "id": "fall-armyworm-kit",
+   "name": "APS Fall Armyworm (FAW) Funnel Trap & Lure Kit",
+   "scientificName": "Spodoptera frugiperda / Spodoptera litura",
+   "category": "Cereals & Commercial Vegetables",
+   "tagline": "High-capacity aerodynamic funnel system protecting maize, corn & vegetable canopies.",
+   "image": "https://static.wixstatic.com/media/1d2854_4621bbc2c27445f8a1bd3e129f0360f9~mv2.jpeg",
+   "badge": "Heavy Catch Design",
+   "targetPest": "Fall Armyworm (FAW) & Tobacco Caterpillar (Spodoptera litura)",
+   "targetCrops": [
+    "Maize (Corn)",
+    "Sweet Corn",
+    "Soybean",
+    "Tomato",
+    "Cabbage",
+    "Groundnut"
+   ],
+   "lureLongevity": "45 to 50 Days Emission",
+   "trapsPerAcre": "4 to 6 Traps / Acre for monitoring, 10 to 12 Traps / Acre for mass trapping",
+   "storeUrl": "https://www.agripherosolutionz.com/product-page/spodoptera-frugiperda-fall-armyworm",
+   "features": [
+    "Extra-large collection sleeve capable of capturing thousands of heavy-bodied moths",
+    "Multi-component pheromone blend formulated to attract early-instar breeding moths",
+    "Rain-proof umbrella hood prevents water entry during monsoon downpours",
+    "Prevents devastating leaf whorl destruction and ear rot in maize"
+   ],
+   "specs": {
+    "Material": "Polypropylene co-polymer with UV stabilizers",
+    "Lure Active Ingredient": "Z9-tetradecenyl acetate / multi-component FAW blend",
+    "Dispenser Form": "Sealed micro-porous polymer ampoule",
+    "Color": "Agricultural green hood with yellow funnel and clear collection bag",
+    "Longevity": "45–50 days under continuous open field exposure"
+   }
+  },
+  {
+   "id": "bio-chromatic-traps",
+   "name": "APS Dual-Spectrum Sticky Traps (Yellow & Blue PVC)",
+   "scientificName": "Bemisia tabaci / Frankliniella occidentalis / Aphididae",
+   "category": "Protected Cultivation & Open Fields",
+   "tagline": "Dual-spectrum non-drying adhesive sheets capturing airborne vectors and sap-suckers.",
+   "image": "https://static.wixstatic.com/media/1d2854_cbfd08826c644ef4a7c18cae8e70e0f3~mv2.jpeg",
+   "badge": "Organic IPM Standard",
+   "targetPest": "Whiteflies, Thrips, Aphids, Jassids, Leafminers & Fungus Gnats",
+   "targetCrops": [
+    "Capsicum",
+    "Chilli",
+    "Tomato",
+    "Polyhouse Crops",
+    "Floriculture",
+    "Tea"
+   ],
+   "lureLongevity": "90+ Days Weatherproof Tackiness",
+   "trapsPerAcre": "20 to 25 Sheets / Acre for greenhouses, 15 to 20 Sheets / Acre open fields",
+   "storeUrl": "https://www.agripherosolutionz.com/product-page/yellow-blue-sticky-sheets-pvc-a4",
+   "features": [
+    "Calibrated nanometer wavelength reflection: Yellow (580nm) for Whiteflies/Aphids, Blue (450nm) for Thrips",
+    "Non-drying, non-toxic high-tack adhesive that withstands hot sun, dust and rainwash",
+    "Drastically reduces viral disease transmission (Leaf Curl Virus, Spotted Wilt Virus)",
+    "Ready to hang with pre-punched reinforced eyelets and weather-proof ties"
+   ],
+   "specs": {
+    "Material": "Virgin High-Density PVC / Polypropylene sheet (250 microns)",
+    "Adhesive Type": "Custom polyisobutylene UV-stable high-tack adhesive (both sides)",
+    "Sheet Dimensions": "A4 and Small standard options",
+    "Color": "Calibrated Spectral Yellow & Calibrated Spectral Blue",
+    "Longevity": "Sticky retention for over 90 days in dusty or wet field conditions"
+   }
+  }
+ ],
+ "company": {
+  "name": "Agri Phero Solutionz",
+  "shortName": "APS",
+  "tagline": "Protecting Crop Creating Life",
+  "legalEntity": "Agri Phero Solutionz Pvt. Ltd.",
+  "headquarters": {
+   "address": "Plot No. 18 & 19, Phase-III, IDA Cherlapally, Hyderabad - 500051, Telangana, India",
+   "phone": "+91 94901 02444",
+   "alternatePhone": "+91 94901 02445",
+   "email": "info@agripherosolutionz.com",
+   "salesEmail": "sales@agripherosolutionz.com",
+   "exportEmail": "export@agripherosolutionz.com",
+   "whatsappNumber": "919490102444"
+  },
+  "ecommerceUrl": "https://www.agripherosolutionz.com/",
+  "certifications": [
+   {
+    "title": "ISO 9001:2015",
+    "desc": "Quality Management Systems Certified Facility"
+   },
+   {
+    "title": "CIB & RC Compliant",
+    "desc": "Formulated in alignment with Central Insecticides Board bio-regulations"
+   },
+   {
+    "title": "Zero MRL Residue",
+    "desc": "Assists farmers in achieving European Union & US EPA export clearances"
+   },
+   {
+    "title": "Make in India",
+    "desc": "Indigenous synthesis & manufacturing biotechnology"
+   }
+  ]
+ },
+ "metrics": [
+  {
+   "id": "chemical-reduction",
+   "value": "90%",
+   "suffix": "+",
+   "label": "Pesticide Spray Reduction",
+   "subtext": "Replaces 6 to 10 chemical pesticide rounds per season",
+   "color": "from-emerald-500 to-green-600",
+   "icon": "ShieldAlert"
+  },
+  {
+   "id": "yield-enhancement",
+   "value": "22%",
+   "suffix": "Avg",
+   "label": "Marketable Harvest Boost",
+   "subtext": "Higher Grade-A blemish-free fruit and grain qualification",
+   "color": "from-amber-500 to-orange-500",
+   "icon": "TrendingUp"
+  },
+  {
+   "id": "pollinator-safety",
+   "value": "0%",
+   "suffix": "Toxicity",
+   "label": "Harm to Bees & Soil Microbiome",
+   "subtext": "Species-specific female pheromones ignore non-target beneficial insects",
+   "color": "from-blue-500 to-emerald-500",
+   "icon": "HeartHandshake"
+  },
+  {
+   "id": "matrix-longevity",
+   "value": "60+",
+   "suffix": "Days",
+   "label": "Continuous Field Protection",
+   "subtext": "Polymer micro-capillary technology withstands 45°C field heat",
+   "color": "from-lime-500 to-emerald-600",
+   "icon": "Clock"
+  }
+ ],
+ "pillars": [
+  {
+   "id": "science",
+   "title": "Science & Molecular Innovation",
+   "tagline": "Precision Olfactory Synthesis and Species-Specific Chemistry",
+   "badge": "R&D Excellence",
+   "icon": "Microscope",
+   "image": "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?auto=format&fit=crop&w=1200&q=80",
+   "description": "At Agri Phero Solutionz, our core foundation is organic synthetic chemistry. Our in-house research laboratory formulates female insect sex pheromones with isomeric purity exceeding 99%. By decoding chemical communication of invasive agricultural pests, we create exact biomimetic lures that disrupt mating cycles without introducing toxic chemicals into the agro-ecosystem.",
+   "bulletPoints": [
+    "Gas Chromatography-Mass Spectrometry (GC-MS) batch validation ensures isomeric consistency",
+    "Patented micro-capillary polymer matrix guarantees linear release rates over 60 days",
+    "Collaborations with premier agricultural universities and ICAR research institutes",
+    "AI-assisted pest monitoring integration ready for modern precision agriculture"
+   ],
+   "stat": {
+    "number": "99.4%",
+    "label": "Isomer Purity Rate"
+   }
+  },
+  {
+   "id": "manufacturing",
+   "title": "High-Capacity In-House Manufacturing",
+   "tagline": "Industrial Scale, Clean-Room Precision in Cherlapally, Hyderabad",
+   "badge": "Cherlapally Facility",
+   "icon": "Factory",
+   "image": "https://images.unsplash.com/photo-1581092160607-ee22621dd758?auto=format&fit=crop&w=1200&q=80",
+   "description": "Unlike traders who rebrand third-party goods, APS operates a world-class manufacturing facility in Cherlapally, Hyderabad. With automated lure compounding, clean-room dispenser sealing, and precision plastic injection molding for UV-stabilized trap bodies, we guarantee uncompromising quality control, direct factory pricing, and large-scale bulk fulfillment.",
+   "bulletPoints": [
+    "High-speed automated dispenser filling lines producing 100,000+ lures daily",
+    "Virgin UV-stabilized polymer trap molding resisting extreme tropical weather",
+    "End-to-end batch barcode traceability for institutional and government audits",
+    "OEM & private-label formulation capabilities for multinational agribusinesses"
+   ],
+   "stat": {
+    "number": "5M+",
+    "label": "Annual Lure Capacity"
+   }
+  },
+  {
+   "id": "sustainability",
+   "title": "Planetary Sustainability & ESG",
+   "tagline": "Zero Residue Agriculture for Global Export Competitiveness",
+   "badge": "Eco Compliance",
+   "icon": "Leaf",
+   "image": "https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1200&q=80",
+   "description": "Chemical pesticide resistance is threatening agricultural viability globally. APS provides the antidote: non-toxic bio-rational pest management that leaves 0% chemical residues on food crops. Our pheromone systems preserve natural pollinator populations, protect groundwater tables from chemical leaching, and empower Indian farmers to effortlessly meet EU and US export standards.",
+   "bulletPoints": [
+    "100% compliant with zero MRL (Maximum Residue Limits) for international export",
+    "Safe for spray operators, field workers, livestock, and local drinking water supplies",
+    "Restores natural predator balances (spiders, lacewings, ladybird beetles)",
+    "Reduces farm carbon footprint by cutting synthetic chemical synthesis demand"
+   ],
+   "stat": {
+    "number": "0%",
+    "label": "Chemical Runoff"
+   }
+  }
+ ],
+ "steps": [
+  {
+   "step": "01",
+   "title": "Biomimetic Olfactory Emission",
+   "desc": "The APS polymer lure releases minute, calibrated microgram quantities of synthesized female sex pheromones into the crop canopy, mimicking a calling female.",
+   "icon": "Radio"
+  },
+  {
+   "step": "02",
+   "title": "Mating Communication Disruption",
+   "desc": "Male pests detect the scent plume from up to 400 meters away. They become disoriented, unable to locate real females, collapsing natural reproduction rates in the field.",
+   "icon": "Compass"
+  },
+  {
+   "step": "03",
+   "title": "Aerodynamic Mechanical Capture",
+   "desc": "Lured toward the trap body, pests enter specialized one-way entry funnels or slits. They drop into the secure collection chamber without using chemical poisons.",
+   "icon": "Target"
+  },
+  {
+   "step": "04",
+   "title": "Pest Collapse & Residue-Free Harvest",
+   "desc": "The second and third insect generations fail to hatch. Crop damage drops to near zero, yielding pristine, organic-grade produce ready for premium markets.",
+   "icon": "Sparkles"
+  }
+ ],
+ "jnanam": [
+  {
+   "title": "Trap Height & Spatial Placement Guide",
+   "category": "Field Best Practice",
+   "readTime": "4 min read",
+   "snippet": "Why hanging fruit fly traps at 5-6 feet under the canopy shade increases catch rates by 40% compared to direct sun exposure.",
+   "crop": "Mango & Guava"
+  },
+  {
+   "title": "Pink Bollworm ETL (Economic Threshold Level)",
+   "category": "Cotton Advisory",
+   "readTime": "5 min read",
+   "snippet": "How catching 8 moths per trap for 3 consecutive nights signals the exact time to reinforce trap density before larvae bore into bolls.",
+   "crop": "Cotton"
+  },
+  {
+   "title": "Fall Armyworm Early Scouting in Maize",
+   "category": "Cereal Protection",
+   "readTime": "6 min read",
+   "snippet": "Identifying whorl 'pin-hole' symptoms and installing funnel traps at knee-high crop stages to prevent terminal ear damage.",
+   "crop": "Corn / Maize"
+  }
+ ],
+ "calc": {
+  "Mango": {
+   "pest": "Fruit Fly",
+   "trap": "APS Easy/Maxfill Fruit Fly Trap",
+   "perAcre": 8,
+   "lureLife": 65
+  },
+  "Cotton": {
+   "pest": "Pink Bollworm",
+   "trap": "APS PBW Trapper Kit",
+   "perAcre": 10,
+   "lureLife": 55
+  },
+  "Maize": {
+   "pest": "Fall Armyworm",
+   "trap": "APS FAW Funnel Trap",
+   "perAcre": 6,
+   "lureLife": 45
+  },
+  "Guava": {
+   "pest": "Fruit Fly",
+   "trap": "APS Easy Fruit Fly Trap",
+   "perAcre": 8,
+   "lureLife": 65
+  },
+  "Tomato": {
+   "pest": "Tuta Absoluta / Fruit Borer",
+   "trap": "APS Delta / Sticky Trap",
+   "perAcre": 12,
+   "lureLife": 50
+  },
+  "Chilli": {
+   "pest": "Thrips & Whitefly",
+   "trap": "APS Bio-Chromatic Yellow & Blue",
+   "perAcre": 20,
+   "lureLife": 90
+  }
+ }
+}

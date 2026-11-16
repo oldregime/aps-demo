@@ -1,0 +1,140 @@
+{
+  "$schema": "https://playground.wordpress.net/blueprint-schema.json",
+  "landingPage": "/",
+  "preferredVersions": {
+    "php": "8.3",
+    "wp": "latest"
+  },
+  "features": {
+    "networking": true
+  },
+  "login": true,
+  "siteOptions": {
+    "blogname": "Agri Phero Solutionz",
+    "blogdescription": "Protecting Crop \u2022 Creating Life"
+  },
+  "steps": [
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "polylang"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "fluentform"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "wordpress.org/plugins",
+        "slug": "seo-by-rank-math"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installPlugin",
+      "pluginData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/aps-core-plugin.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "installTheme",
+      "themeData": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/aps-corporate-theme.zip"
+      },
+      "options": {
+        "activate": true
+      }
+    },
+    {
+      "step": "mkdir",
+      "path": "/wordpress/wp-content/aps-seed"
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/lib-blocks.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/lib-blocks.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/seed-data.json",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-data.json"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/seed-home.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-home.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/seed-forms.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-forms.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/seed-pages.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/seed-pages.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/aps-logo.png",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/aps-logo.png"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/provision-pages.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/provision-pages.php"
+      }
+    },
+    {
+      "step": "writeFile",
+      "path": "/wordpress/wp-content/aps-seed/provision.php",
+      "data": {
+        "resource": "url",
+        "url": "https://raw.githubusercontent.com/oldregime/aps-demo/main/scripts/provision.php"
+      }
+    },
+    {
+      "step": "runPHP",
+      "code": "<?php\n$S = '/wordpress/wp-content/aps-seed';\nregister_shutdown_function( function () use ( $S ) { $e = error_get_last(); if ( $e ) file_put_contents( \"$S/last-error.txt\", print_r( $e, true ), FILE_APPEND ); } );\nrequire '/wordpress/wp-load.php';\nif ( ! class_exists( 'WP_CLI' ) ) { class WP_CLI { static function log( $m ) { file_put_contents( '/wordpress/wp-content/aps-seed/log.txt', \"LOG $m\\n\", FILE_APPEND ); } static function warning( $m ) { file_put_contents( '/wordpress/wp-content/aps-seed/log.txt', \"WARN $m\\n\", FILE_APPEND ); } static function success( $m ) { file_put_contents( '/wordpress/wp-content/aps-seed/log.txt', \"OK $m\\n\", FILE_APPEND ); } static function error( $m ) { throw new Exception( $m ); } } }\nupdate_option( 'permalink_structure', '/%postname%/' );\nwp_set_current_user( 1 );\n@set_time_limit( 0 );\nforeach ( [ 'provision-pages', 'seed-home', 'seed-forms', 'seed-pages', 'provision' ] as $f ) {\n\ttry { include \"$S/$f.php\"; file_put_contents( \"$S/log.txt\", \"DONE $f\\n\", FILE_APPEND ); }\n\tcatch ( Throwable $t ) { file_put_contents( \"$S/log.txt\", \"FAIL $f: \" . $t->getMessage() . ' @ ' . $t->getFile() . ':' . $t->getLine() . \"\\n\", FILE_APPEND ); }\n}\nflush_rewrite_rules();\n"
+    }
+  ]
+}
